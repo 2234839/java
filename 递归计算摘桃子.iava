@@ -15,7 +15,7 @@ public class Main
 	public static double chitao(double nub,int days){
 		double temp=nub;
 		for(int i=1;i<days;i++){//吃days天
-			temp=temp/2-1;//吃一半后又吃一天
+			temp=temp/2-1;//吃一半后又吃一个
 		}
 		if(temp!=1){
 			chitao(++nub,days);
