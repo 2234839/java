@@ -1,0 +1,29 @@
+import java.util.*;
+/*递归计算
+
+设一个猴子第一天摘了nub个桃子，并且第一天吃了一半的桃子后又吃了一个桃子
+后来几天都是如此
+第四天时只剩下了一个桃子
+求第一天摘了几个桃子
+*/
+public class Main
+{
+	public static void main(String[] args)
+	{
+		System.out.println("应有"+chitao(1,4));
+	}
+	public static double chitao(double nub,int days){
+		double temp=nub;
+		for(int i=1;i<days;i++){//吃days天
+			temp=temp/2-1;//吃一半后又吃一天
+		}
+		if(temp!=1){
+			chitao(++nub,days);
+			return nub;//很奇怪这一条会执行并且返回的是2
+		}
+		else{
+			System.out.println("第一天摘了"+nub+"个桃子");
+			return 000;//而这条没有执行
+		}
+	}
+}
